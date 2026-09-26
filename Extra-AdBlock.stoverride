@@ -3,10 +3,10 @@
 #!homepage=https://github.com/wiwiwiwiwii/Ad-blocker
 
 name: "🧩 Extra AdBlock"
-desc: "[v7.0.0-beta] 高频 App 去广告 + Kelee 低副作用增强"
+desc: "[v1.0.0] 高频 App 去广告 + Kelee 低副作用增强"
 category: "🛡️ AdBlock"
 date: "2026-09-27"
-version: "7.0.0-beta"
+version: "1.0.0"
 
 rules:
   # ==================================================
@@ -170,8 +170,10 @@ http:
     # 航旅纵横
     # ==================================================
     - home.umetrip.com
+    - home.umetrip.com.cn
     - umerp.umetrip.com
     - umerp.umetrip.com.cn
+    - bkclient.umetrip.com
     - bkclient.umetrip.com.cn
 
     # ==================================================
@@ -331,7 +333,7 @@ http:
     - manga.bilibili.com
 
     # ==================================================
-    # Shiina Lite 已覆盖，但 V6 有额外 Kelee 规则
+    # Shiina Lite 已覆盖，但 Extra 有额外 Kelee 规则
     # ==================================================
     - api.m.jd.com
     - api.pinduoduo.com
@@ -374,7 +376,7 @@ http:
     - ^https:\/\/api\.xueqiu\.com\/query\/v1\/hot_event\/tag\.json\? - reject-dict
     - ^https:\/\/fund\.xueqiu\.com\/fundx\/activity\/x\/web\/c\/index\/dataByCode\? - reject-dict
 
-    # Kelee V6：更多纯推荐卡
+    # Kelee：更多纯推荐卡
     - ^https:\/\/api\.xueqiu\.com\/recommend-proxy\/card\/zj_card\.json\?feed_id=207 - reject-dict
     - ^https:\/\/api\.xueqiu\.com\/recommend-proxy\/card\/portfolio_tab_symbol\.json - reject-dict
     - ^https:\/\/stock\.xueqiu\.com\/v5\/stock\/group\/recommend\/default\/list\.json - reject-dict
@@ -448,7 +450,7 @@ http:
     - ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/mlivestream\/entrance\/playpage\/ - reject-dict
     - ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/mine\/applet\/redpoint - reject-dict
 
-    # Kelee V6：搜索营销与播放页营销
+    # Kelee：搜索营销与播放页营销
     - ^https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/search\/default - reject-dict
     - ^https?:\/\/interface\d?\.music\.163\.com\/w?eapi\/search\/(?:chart|rcmd\/keyword|specialkeyword) - reject-dict
     - ^https?:\/\/interface\d?\.music\.163\.com\/w?eapi\/activity\/bonus\/playpage\/time\/query - reject-dict
@@ -535,7 +537,7 @@ http:
     - ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan) - reject-dict
     - ^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\? - reject-dict
 
-    # Kelee V6：AI推荐及产品营销
+    # Kelee：AI推荐及产品营销
     - ^https:\/\/ai\.amap\.com\/v1\/ai_rec\/ - reject-dict
     - ^https:\/\/m5\.amap\.com\/ws\/aos\/main\/page\/product\/list\? - reject-dict
 
@@ -562,7 +564,7 @@ http:
     # ==================================================
     - ^https?:\/\/ut\.xiaojukeji\.com\/ut\/kappa\/api\/owner\/index\/dialog - reject-dict
 
-    # Kelee V6：运营活动和代驾营销弹窗
+    # Kelee：运营活动和代驾营销弹窗
     - ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget(?:\?.*)?$ - reject-dict
     - ^https:\/\/daijia\.kuaidadi\.com(?::443)?\/gateway\?api=lj\.cos\.p\.popup(?:&|$) - reject-dict
 
@@ -606,7 +608,7 @@ http:
     - ^https?:\/\/hweb-manager\.huazhu\.com\/notice\/getAppPopupNotifyAlert - reject-dict
     - ^https?:\/\/hweb-manager\.huazhu\.com\/hotels\/ad\/ - reject-dict
 
-    # Kelee V6：首页营销 Banner
+    # Kelee：首页营销 Banner
     - ^https:\/\/hweb-hotel\.huazhu\.com\/home\/getHomeLoinBanner$ - reject-dict
 
 
@@ -630,9 +632,9 @@ http:
     # 开屏广告
     - ^https?:\/\/bootrealtime\.uve\.weibo\.com\/v[23]\/ad\/realtime - reject-dict
 
-    # 长文章广告 / 赞赏营销
-    - ^https?:\/\/card\.weibo\.com\/article\/m\/aj\/(?:reward|uvead)\? - reject-dict
-    - ^https?:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(?:reward|uvead)\? - reject-dict
+    # 长文章广告
+    - ^https?:\/\/card\.weibo\.com\/article\/m\/aj\/uvead\? - reject-dict
+    - ^https?:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/uvead\? - reject-dict
 
 
     # ==================================================
@@ -663,7 +665,7 @@ http:
 
     # ==================================================
     # 拼多多
-    # Shiina Lite 已处理开屏；V6 只补低价值推荐
+    # Shiina Lite 已处理开屏；这里只补低价值推荐
     # ==================================================
     - ^https:\/\/api\.pinduoduo\.com\/search_hotquery\? - reject-dict
     - ^https:\/\/api\.pinduoduo\.com\/api\/growth\/nagato\/app\/index\/gather\? - reject-dict
@@ -673,7 +675,7 @@ http:
     # ==================================================
     # 闲鱼
     # Shiina Lite 已过滤主信息流广告
-    # Kelee V6 补推荐/搜索营销
+    # Kelee 补推荐/搜索营销
     # ==================================================
     - ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/ - reject-dict
     - ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.buy\.feeds\/ - reject-dict
@@ -685,7 +687,7 @@ http:
     # ==================================================
     # 小红书
     # Shiina Lite 已过滤开屏/信息流广告
-    # Kelee V6 补搜索及引导营销
+    # Kelee 补搜索及引导营销
     # ==================================================
     - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/guide\/user_banner|v3\/note\/guide) - reject-dict
     - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/banner_list$ - reject-dict
