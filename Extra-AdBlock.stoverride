@@ -3,10 +3,10 @@
 #!homepage=https://github.com/wiwiwiwiwii/Ad-blocker
 
 name: "🧩 Extra AdBlock"
-desc: "[v6.0.0-beta] 高频 App 去广告 + Kelee 低副作用增强"
+desc: "[v7.0.0-beta] 高频 App 去广告 + Kelee 低副作用增强"
 category: "🛡️ AdBlock"
 date: "2026-09-27"
-version: "6.0.0-beta"
+version: "7.0.0-beta"
 
 rules:
   # ==================================================
@@ -110,6 +110,16 @@ rules:
   # ==================================================
   - DOMAIN,apm-api.huazhu.com,REJECT
 
+  # ==================================================
+  # 微博
+  # ==================================================
+  - DOMAIN-SUFFIX,alitui.weibo.com,REJECT
+  - DOMAIN,bootpreload.uve.weibo.com,REJECT
+  - DOMAIN,adpinpai.video.weibocdn.com,REJECT
+  - DOMAIN-SUFFIX,adimg.uve.weibo.com,REJECT
+  - DOMAIN-SUFFIX,promote.biz.weibo.cn,REJECT
+  - DOMAIN-SUFFIX,ad.weibo.com,REJECT
+
 
 http:
   force-http-engine:
@@ -134,7 +144,6 @@ http:
     # 雪球
     # ==================================================
     - api.xueqiu.com
-    - open.xueqiu.com
     - stock.xueqiu.com
     - promo.xueqiu.com
     - fund.xueqiu.com
@@ -310,14 +319,24 @@ http:
     - api2.yaduo.com
 
     # ==================================================
+    # 微博
+    # ==================================================
+    - bootrealtime.uve.weibo.com
+    - card.weibo.com
+    - weibo.com
+
+    # ==================================================
+    # 哔哩哔哩漫画
+    # ==================================================
+    - manga.bilibili.com
+
+    # ==================================================
     # Shiina Lite 已覆盖，但 V6 有额外 Kelee 规则
     # ==================================================
     - api.m.jd.com
     - api.pinduoduo.com
     - acs.m.goofish.com
-    - g-acs.m.goofish.com
     - edith.xiaohongshu.com
-    - www.xiaohongshu.com
 
 
   url-rewrite:
@@ -510,7 +529,6 @@ http:
     # ==================================================
     # 高德地图
     # ==================================================
-    - ^https?:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt - reject
     - ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? - reject-dict
     - ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? - reject-dict
     - ^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\? - reject-dict
@@ -602,6 +620,38 @@ http:
     # 亚朵
     # ==================================================
     - ^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch - reject-dict
+
+
+    # ==================================================
+    # 微博
+    # R-Store / RuCu6 低风险广告项
+    # ==================================================
+
+    # 开屏广告
+    - ^https?:\/\/bootrealtime\.uve\.weibo\.com\/v[23]\/ad\/realtime - reject-dict
+
+    # 长文章广告 / 赞赏营销
+    - ^https?:\/\/card\.weibo\.com\/article\/m\/aj\/(?:reward|uvead)\? - reject-dict
+    - ^https?:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(?:reward|uvead)\? - reject-dict
+
+
+    # ==================================================
+    # 哔哩哔哩漫画
+    # 与 Shiina 普通 Bilibili 模块不同，是独立 App
+    # 仅处理广告、营销、弹窗、额外推荐
+    # ==================================================
+
+    # 小说额外推荐
+    - ^https?:\/\/manga\.bilibili\.com\/twirp\/novel\.v\d+\.Novel\/MoreRecommend - reject-dict
+
+    # 漫画推荐 / 开屏 / 活动 / Banner
+    - ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d+\.Comic\/(?:MoreRecommend|(?:List)?Flash|GetActivityTab|GetOperaterBanner|GetHookBanner|SearchBanner) - reject-200
+
+    # 营销弹窗
+    - ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d+\.PopUp\/GetAvailablePopUp - reject-dict
+
+    # 营销中心
+    - ^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d+\.User\/GetMarketingCenterInfo - reject-dict
 
 
     # ==================================================
