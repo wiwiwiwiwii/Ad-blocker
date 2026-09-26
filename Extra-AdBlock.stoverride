@@ -1,0 +1,704 @@
+#!name=Extra AdBlock
+#!desc=Shiina AdBlock Lite 的高频 App 增强补充包
+#!homepage=https://github.com/wiwiwiwiwii/Ad-blocker
+
+name: "🧩 Extra AdBlock"
+desc: "[v6.0.0-beta] 高频 App 去广告 + Kelee 低副作用增强"
+category: "🛡️ AdBlock"
+date: "2026-09-27"
+version: "6.0.0-beta"
+
+rules:
+  # ==================================================
+  # 东方财富
+  # ==================================================
+  - DOMAIN,emdcadvertise.eastmoney.com,REJECT
+  - DOMAIN,emdcadvertisepj.eastmoney.com,REJECT
+
+  # ==================================================
+  # 同花顺
+  # ==================================================
+  - DOMAIN,adm.10jqka.com.cn,REJECT
+  - DOMAIN,stat.10jqka.com.cn,REJECT
+  - DOMAIN-SUFFIX,ad.thsi.cn,REJECT
+
+  # ==================================================
+  # 雪球
+  # ==================================================
+  - DOMAIN-SUFFIX,ad.xueqiu.com,REJECT
+
+  # ==================================================
+  # 航旅纵横
+  # startup/discardrp 已由 Shiina Startup Ads 处理
+  # ==================================================
+  - DOMAIN,analytics.umetrip.com,REJECT
+  - DOMAIN,sensors.umetrip.com.cn,REJECT
+
+  # ==================================================
+  # 美团
+  # ==================================================
+  - DOMAIN-SUFFIX,ad.e.waimai.sankuai.com,REJECT
+  - DOMAIN-SUFFIX,mads.meituan.com,REJECT
+
+  # ==================================================
+  # 喜马拉雅
+  # ==================================================
+  - DOMAIN,adbehavior.ximalaya.com,REJECT
+  - DOMAIN,adbehavior.wsa.ximalaya.com,REJECT
+  - DOMAIN,adse.ximalaya.com,REJECT
+  - DOMAIN,adsehera.ximalaya.com,REJECT
+  - DOMAIN,adse.wsa.ximalaya.com,REJECT
+  - DOMAIN,adwbs.ximalaya.com,REJECT
+  - DOMAIN-SUFFIX,adweb.ximalaya.com,REJECT
+  - DOMAIN-SUFFIX,ad.ximalaya.com,REJECT
+  - DOMAIN-SUFFIX,adsebs.ximalaya.com,REJECT
+  - DOMAIN-SUFFIX,adbs.ximalaya.com,REJECT
+
+  # ==================================================
+  # 网易云音乐
+  # ==================================================
+  - DOMAIN,iadmat.nosdn.127.net,REJECT
+  - DOMAIN,iadmatapk.nosdn.127.net,REJECT
+  - DOMAIN,iadmusicmat.music.126.net,REJECT
+  - DOMAIN,iadmusicmatvideo.music.126.net,REJECT
+  - DOMAIN,admusicpic.music.126.net,REJECT
+
+  # ==================================================
+  # QQ音乐
+  # ==================================================
+  - DOMAIN,adstats.tencentmusic.com,REJECT
+  - DOMAIN,ad.tencentmusic.com,REJECT
+  - DOMAIN,adcdn.tencentmusic.com,REJECT
+  - DOMAIN,adcdn6.tencentmusic.com,REJECT
+  - DOMAIN,adexpo.tencentmusic.com,REJECT
+  - DOMAIN,adclick.tencentmusic.com,REJECT
+  - DOMAIN,mc.tencentmusic.com,REJECT
+  - DOMAIN,monitor.music.qq.com,REJECT
+  - DOMAIN,tmead.y.qq.com,REJECT
+  - DOMAIN,tmeadbak.y.qq.com,REJECT
+  - DOMAIN,tmeadquic.y.qq.com,REJECT
+
+  # ==================================================
+  # 掌阅
+  # ==================================================
+  - DOMAIN,saad.ms.zhangyue.net,REJECT
+
+  # ==================================================
+  # 中国联通
+  # ==================================================
+  - DOMAIN-SUFFIX,ad.10010.com,REJECT
+
+  # ==================================================
+  # 高德地图
+  # ==================================================
+  - DOMAIN,amap-aos-info-nogw.amap.com,REJECT
+  - DOMAIN,optimus-ads.amap.com,REJECT
+  - DOMAIN-SUFFIX,adiu.amap.com,REJECT
+
+  # ==================================================
+  # 滴滴
+  # ==================================================
+  - DOMAIN,adtrack.xiaojukeji.com,REJECT
+
+  # ==================================================
+  # 米家
+  # ==================================================
+  - DOMAIN,sdkconfig.ad.xiaomi.com,REJECT
+
+  # ==================================================
+  # 华住会
+  # ==================================================
+  - DOMAIN,apm-api.huazhu.com,REJECT
+
+
+http:
+  force-http-engine:
+    - client.app.coc.10086.cn
+
+  mitm:
+    # ==================================================
+    # 金十数据
+    # ==================================================
+    - jad-api.jin10.com
+    - common-open-api.jin10.com
+    - search-open-api.jin10.com
+    - cdn.jin10.com
+    - "*.z3c.jin10.com"
+
+    # ==================================================
+    # 东方财富
+    # ==================================================
+    - swdlcdn.eastmoney.com
+
+    # ==================================================
+    # 雪球
+    # ==================================================
+    - api.xueqiu.com
+    - open.xueqiu.com
+    - stock.xueqiu.com
+    - promo.xueqiu.com
+    - fund.xueqiu.com
+
+    # ==================================================
+    # 财联社
+    # ==================================================
+    - api3.cls.cn
+
+    # ==================================================
+    # 华尔街见闻
+    # ==================================================
+    - api-one-wscn.awtmt.com
+    - api.wallstreetcn.com
+    - api.wallstcn.com
+    - wallstreetcn.com
+
+    # ==================================================
+    # 界面新闻
+    # ==================================================
+    - img.jiemian.com
+
+    # ==================================================
+    # 航旅纵横
+    # ==================================================
+    - home.umetrip.com
+    - umerp.umetrip.com
+    - umerp.umetrip.com.cn
+    - bkclient.umetrip.com.cn
+
+    # ==================================================
+    # 铁路12306
+    # ==================================================
+    - ad.12306.cn
+    - mobile.12306.cn
+
+    # ==================================================
+    # 交管12123
+    # ==================================================
+    - gab.122.gov.cn
+
+    # ==================================================
+    # 美团
+    # ==================================================
+    - img.meituan.net
+    - sqt.meituan.com
+
+    # ==================================================
+    # 喜马拉雅
+    # ==================================================
+    - search.ximalaya.com
+    - searchwsa.ximalaya.com
+    - mobile.ximalaya.com
+    - mobilehera.ximalaya.com
+    - mobwsa.ximalaya.com
+
+    # ==================================================
+    # 网易云音乐
+    # ==================================================
+    - "interface*.music.163.com"
+
+    # ==================================================
+    # QQ音乐
+    # ==================================================
+    - y.gtimg.cn
+    - music.y.qq.com
+
+    # ==================================================
+    # 掌阅
+    # ==================================================
+    - ih2.ireader.com
+    - webboot.zhangyue.com
+
+    # ==================================================
+    # 网易邮箱大师
+    # ==================================================
+    - appconf.mail.163.com
+    - client.mail.163.com
+    - support.you.163.com
+    - dashi.163.com
+
+    # ==================================================
+    # 天天基金
+    # ==================================================
+    - j5.dfcfw.com
+    - appactive.1234567.com.cn
+
+    # ==================================================
+    # 猎聘
+    # ==================================================
+    - api-c.liepin.com
+    - api-ac.liepin.com
+    - api-wanda.liepin.com
+
+    # ==================================================
+    # 山姆
+    # ==================================================
+    - api-sams.walmartmobile.cn
+
+    # ==================================================
+    # 中国移动
+    # ==================================================
+    - client.app.coc.10086.cn
+    - app.10086.cn
+    - client.app.10086.cn
+    - app.coc.10086.cn
+
+    # ==================================================
+    # 中国联通
+    # ==================================================
+    - m.client.10010.com
+    - res.mall.10010.cn
+
+    # ==================================================
+    # 高德地图
+    # ==================================================
+    - m5.amap.com
+    - oss.amap.com
+    - ai.amap.com
+
+    # ==================================================
+    # 百度网盘
+    # ==================================================
+    - pan.baidu.com
+
+    # ==================================================
+    # 大众点评
+    # ==================================================
+    - mapi.dianping.com
+
+    # ==================================================
+    # 滴滴
+    # ==================================================
+    - ut.xiaojukeji.com
+    - res.xiaojukeji.com
+    - daijia.kuaidadi.com
+
+    # ==================================================
+    # 南方航空
+    # ==================================================
+    - 3g.csair.com
+
+    # ==================================================
+    # 东方航空
+    # ==================================================
+    - app.ceair.com
+
+    # ==================================================
+    # 米家
+    # ==================================================
+    - home.mi.com
+
+    # ==================================================
+    # Fitdays
+    # ==================================================
+    - open.fitdays.cn
+
+    # ==================================================
+    # 华住会
+    # ==================================================
+    - appapi.huazhu.com
+    - hweb-manager.huazhu.com
+    - hweb-hotel.huazhu.com
+
+    # ==================================================
+    # 希尔顿
+    # ==================================================
+    - wcprd.hilton.com.cn
+
+    # ==================================================
+    # 亚朵
+    # ==================================================
+    - api2.yaduo.com
+
+    # ==================================================
+    # Shiina Lite 已覆盖，但 V6 有额外 Kelee 规则
+    # ==================================================
+    - api.m.jd.com
+    - api.pinduoduo.com
+    - acs.m.goofish.com
+    - g-acs.m.goofish.com
+    - edith.xiaohongshu.com
+    - www.xiaohongshu.com
+
+
+  url-rewrite:
+
+    # ==================================================
+    # 金十数据
+    # ==================================================
+    - ^https:\/\/jad-api\.jin10\.com\/ad\d+\/ - reject-dict
+    - ^https?:\/\/jad-api\.jin10\.com\/ad(?:[\/?]|$) - reject-dict
+    - ^https:\/\/common-open-api\.jin10\.com\/configuration\/getById\?id=1493$ - reject-dict
+    - ^https:\/\/search-open-api\.jin10\.com\/search\/getHotWords$ - reject-dict
+    - ^https:\/\/cdn\.jin10\.com\/json\/index\/hits_rank\.json\? - reject-dict
+    - ^https:\/\/[0-9a-z]+\.z3c\.jin10\.com\/api\/home\/search\/hot$ - reject-dict
+    - ^https:\/\/jad-api\.jin10\.com\/mult\/list_unread\? - reject-dict
+
+
+    # ==================================================
+    # 东方财富
+    # ==================================================
+    - ^https?:\/\/swdlcdn\.eastmoney\.com\/app\/adimg\/ - reject-dict
+
+
+    # ==================================================
+    # 雪球
+    # ==================================================
+    - ^https?:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query - reject-dict
+    - ^https?:\/\/api\.xueqiu\.com\/lightsnow\/launch\/plan\/bee\/query - reject-dict
+    - ^https?:\/\/api\.xueqiu\.com\/lightsnow\/optional\/banner\/query - reject-dict
+    - ^https?:\/\/(?:api|promo)\.xueqiu\.com\/promotion\/(?:display_cache|display_ad|feed_display|search_ad) - reject-dict
+    - ^https?:\/\/api\.xueqiu\.com\/livestream\/structure\/live\/hotCard - reject-dict
+
+    # Kelee：热门/AI/基金活动
+    - ^https:\/\/api\.xueqiu\.com\/snowflake-theme\/query\/v1\/hot_event\/rich_tag_new\.json\? - reject-dict
+    - ^https:\/\/api\.xueqiu\.com\/query\/search\/ai\/v2\/recommend_search\.json\? - reject-dict
+    - ^https:\/\/api\.xueqiu\.com\/query\/v1\/hot_event\/tag\.json\? - reject-dict
+    - ^https:\/\/fund\.xueqiu\.com\/fundx\/activity\/x\/web\/c\/index\/dataByCode\? - reject-dict
+
+    # Kelee V6：更多纯推荐卡
+    - ^https:\/\/api\.xueqiu\.com\/recommend-proxy\/card\/zj_card\.json\?feed_id=207 - reject-dict
+    - ^https:\/\/api\.xueqiu\.com\/recommend-proxy\/card\/portfolio_tab_symbol\.json - reject-dict
+    - ^https:\/\/stock\.xueqiu\.com\/v5\/stock\/group\/recommend\/default\/list\.json - reject-dict
+    - ^https:\/\/api\.xueqiu\.com\/rainbow\/ai\/question\/generate\/status_question\.json\? - reject-dict
+
+
+    # ==================================================
+    # 财联社
+    # ==================================================
+    - ^https?:\/\/api3\.cls\.cn\/v\d\/boot\/ad - reject
+
+
+    # ==================================================
+    # 华尔街见闻
+    # ==================================================
+    - ^https?:\/\/api-one-wscn\.awtmt\.com\/apiv\d\/advertising\/ - reject-dict
+    - ^https?:\/\/api\.wallstreetcn\.com\/apiv\d\/advertising\/ - reject-dict
+    - ^https?:\/\/api\.wallstcn\.com\/apiv\d\/advertising\/ - reject-dict
+    - ^https:\/\/wallstreetcn\.com\/app-faas\/coupon\/user\/search\/popup$ - reject-dict
+    - ^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/kvconfig\/items\/search_keywords_wscnvip$ - reject-dict
+    - ^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/search\/hotsearch\? - reject-dict
+    - ^https:\/\/api-one-wscn\.awtmt\.com\/apiv1\/content\/carousel\/information-flow\? - reject-dict
+
+
+    # ==================================================
+    # 界面新闻
+    # ==================================================
+    - ^https?:\/\/img\.jiemian\.com\/ads\/ - reject
+
+
+    # ==================================================
+    # 铁路12306
+    # ==================================================
+    - ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ - reject-dict
+
+
+    # ==================================================
+    # 交管12123
+    # ==================================================
+    - ^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver - reject
+
+
+    # ==================================================
+    # 美团
+    # ==================================================
+    - ^https?:\/\/img\.meituan\.net\/(?:adunion|display|midas)\/.+\.(?:gif|jpg)\.webp$ - reject-img
+    - ^https?:\/\/sqt\.meituan\.com\/s\/gateway\/mweb\/api\/marketingResource\/show - reject-dict
+
+
+    # ==================================================
+    # 喜马拉雅
+    # ==================================================
+    - ^https:\/\/(?:search|searchwsa)\.ximalaya\.com\/hub\/(?:guideWord|hotWord)V\d\/ - reject-dict
+    - ^https:\/\/(?:mobile|mobilehera|mobwsa)\.ximalaya\.com\/discovery-feed\/v\d\/scene\/listen\/refresh\? - reject-dict
+    - ^https:\/\/(?:mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-playpage\/playpage\/recommendContentV\d\/ - reject-dict
+    - ^https:\/\/(?:mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-playpage\/playpage\/recommend\/resource\/allocation\/ - reject-dict
+    - ^https:\/\/(?:mobile|mobilehera|mobwsa)\.ximalaya\.com\/firework-portal\/v\d+\/sync\? - reject-dict
+    - ^https:\/\/(?:mobile|mobilehera|mobwsa)\.ximalaya\.com\/business-sale-promotion-guide-mobile-web\/popup\/ - reject-dict
+    - ^https:\/\/(?:mobile|mobilehera|mobwsa)\.ximalaya\.com\/track-feed\/v\d\/chase\/recommend\/ - reject-dict
+    - ^https:\/\/(?:mobile|mobilehera|mobwsa)\.ximalaya\.com\/subscribe\/v\d\/subscribe\/recommend\? - reject-dict
+    - ^https:\/\/(?:mobile|mobilehera|mobwsa)\.ximalaya\.com\/mobile-user\/v\d\/purchased\/recommend\/ - reject-dict
+
+
+    # ==================================================
+    # 网易云音乐
+    # ==================================================
+    - ^https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/(?:ocpc\/)?ad(?:[\/?]|$) - reject-dict
+    - ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/delivery\/(?:batch-)?deliver - reject-dict
+    - ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/resniche\/tspopup\/show - reject-dict
+    - ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/v1\/content\/exposure\/comment\/banner\/ - reject-dict
+    - ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/mlivestream\/entrance\/playpage\/ - reject-dict
+    - ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/mine\/applet\/redpoint - reject-dict
+
+    # Kelee V6：搜索营销与播放页营销
+    - ^https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/search\/default - reject-dict
+    - ^https?:\/\/interface\d?\.music\.163\.com\/w?eapi\/search\/(?:chart|rcmd\/keyword|specialkeyword) - reject-dict
+    - ^https?:\/\/interface\d?\.music\.163\.com\/w?eapi\/activity\/bonus\/playpage\/time\/query - reject-dict
+    - ^https?:\/\/interface\d?\.music\.163\.com\/w?eapi\/resource-exposure\/ - reject-dict
+    - ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/link\/position\/show\/strategy - reject-dict
+    - ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/link\/scene\/show\/resource - reject-dict
+    - ^https?:\/\/interface\d?\.music\.163\.com\/eapi\/resniche\/position\/play\/new\/ - reject-dict
+
+
+    # ==================================================
+    # QQ音乐
+    # ==================================================
+    - ^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_splash_info - reject
+    - ^https?:\/\/music\.y\.qq\.com\/maproxy\/getPbCompressAd - reject
+    - ^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/(?:kg_ad|targeted_ads) - reject-img
+
+
+    # ==================================================
+    # 掌阅
+    # ==================================================
+    - ^https:\/\/(?:webboot\.zhangyue\.com|ih2\.ireader\.com)\/zyapi\/bookstore\/ad\/ - reject-dict
+    - ^https:\/\/(?:webboot\.zhangyue\.com|ih2\.ireader\.com)\/bookstore\/ad\/ - reject-dict
+    - ^https?:\/\/ih2\.ireader\.com\/zyapi\/self\/screen\/ad - reject-200
+    - ^https?:\/\/ih2\.ireader\.com\/zycl\/api\/ad\/ - reject-200
+    - ^https:\/\/(?:webboot\.zhangyue\.com|ih2\.ireader\.com)\/zybk\/api\/pop\/index\? - reject-dict
+
+
+    # ==================================================
+    # 网易邮箱大师
+    # ==================================================
+    - ^https?:\/\/appconf\.mail\.163\.com\/mmad - reject-200
+    - ^https?:\/\/client\.mail\.163\.com\/apptrack\/confinfo\/(?:searchMultiAds|showAds) - reject
+    - ^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia - reject
+    - ^https:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/http\/urlConfig\.do$ - reject-dict
+    - ^https:\/\/dashi\.163\.com\/task-center-api\/fapi\/task\/list$ - reject-dict
+    - ^https:\/\/appconf\.mail\.163\.com\/mailoperating\/mailmaster\/api\/operator\/get$ - reject-dict
+
+
+    # ==================================================
+    # 天天基金
+    # ==================================================
+    - ^https?:\/\/appactive\.1234567\.com\.cn\/AppoperationApi\/OperationService\/GetAppStartImg - reject
+    - ^https?:\/\/j5\.dfcfw\.com\/WG\/(?:app)?conf\/202[0-9]{5}\/.*\.(?:jpg|png) - reject-200
+
+
+    # ==================================================
+    # 猎聘
+    # ==================================================
+    - ^https?:\/\/api-c\.liepin\.com\/api\/com\.liepin\.pupa\.discover\.city\.get-ad-comps - reject-dict
+    - ^https?:\/\/api-ac\.liepin\.com\/api\/com\.liepin\.cyclops\.live\.get-ad-cards - reject-dict
+    - ^https?:\/\/api-wanda\.liepin\.com\/api\/com\.liepin\.cbp\.baizhong\.op\.v\d-show-4app - reject-200
+
+
+    # ==================================================
+    # 山姆
+    # ==================================================
+    - ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/sams-user\/screen_promotion\/get - reject
+    - ^https?:\/\/api-sams\.walmartmobile\.cn\/api\/v\d\/sams\/channel\/portal\/AdgroupData - reject-dict
+
+
+    # ==================================================
+    # 中国移动
+    # ==================================================
+    - ^https?:\/\/(?:client\.)?app(?:\.coc)?\.10086\.cn\/biz-orange\/DN\/init\/startInit - reject
+    - ^https?:\/\/(?:client\.)?app(?:\.coc)?\.10086\.cn\/biz-orange\/DN\/explorePage\/getAdverList - reject
+    - ^https?:\/\/(?:client\.)?app(?:\.coc)?\.10086\.cn\/biz-orange\/DN\/emotionMarket - reject
+    - ^https:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/toast\/august\/sortToast - reject
+
+
+    # ==================================================
+    # 中国联通
+    # ==================================================
+    - ^https?:\/\/m\.client\.10010\.com\/mobileService\/(?:activity|customer)\/(?:accountListData|get_client_adv|get_startadv) - reject-img
+    - ^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(?:getHomePageAd|getWelcomeAd) - reject-img
+    - ^https?:\/\/res\.mall\.10010\.cn\/mall\/common\/js\/fa\.js\?referer= - reject-img
+
+
+    # ==================================================
+    # 高德地图
+    # ==================================================
+    - ^https?:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt - reject
+    - ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? - reject-dict
+    - ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? - reject-dict
+    - ^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\? - reject-dict
+    - ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan) - reject-dict
+    - ^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\? - reject-dict
+
+    # Kelee V6：AI推荐及产品营销
+    - ^https:\/\/ai\.amap\.com\/v1\/ai_rec\/ - reject-dict
+    - ^https:\/\/m5\.amap\.com\/ws\/aos\/main\/page\/product\/list\? - reject-dict
+
+
+    # ==================================================
+    # 百度网盘
+    # ==================================================
+    - ^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/(?:ad|adv|adx)\b - reject-dict
+    - ^https:\/\/pan\.baidu\.com\/act\/api\/activityentry\? - reject-dict
+    - ^https:\/\/pan\.baidu\.com\/api\/taskscore\/tasklist\? - reject-dict
+    - ^https:\/\/pan\.baidu\.com\/recommend\/query\/list\? - reject-dict
+    - ^https?:\/\/pan\.baidu\.com\/act\/v\d\/(?:bchannel|welfare)\/list - reject-dict
+
+
+    # ==================================================
+    # 大众点评
+    # ==================================================
+    - ^https?:\/\/mapi\.dianping\.com\/mapi\/operating\/loadsplashconfig - reject-dict
+    - ^https?:\/\/mapi\.dianping\.com\/adshopping - reject-dict
+
+
+    # ==================================================
+    # 滴滴
+    # ==================================================
+    - ^https?:\/\/ut\.xiaojukeji\.com\/ut\/kappa\/api\/owner\/index\/dialog - reject-dict
+
+    # Kelee V6：运营活动和代驾营销弹窗
+    - ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget(?:\?.*)?$ - reject-dict
+    - ^https:\/\/daijia\.kuaidadi\.com(?::443)?\/gateway\?api=lj\.cos\.p\.popup(?:&|$) - reject-dict
+
+
+    # ==================================================
+    # 南方航空
+    # ==================================================
+    - ^https?:\/\/3g\.csair\.com\/CSMBP\/personalCenter\/peronsalCenterAds\/getAdvertMcmsNew - reject
+    - ^https?:\/\/3g\.csair\.com\/CSMBP\/bookProcess\/homepopup\/queryAdvertisement - reject-200
+    - ^https?:\/\/3g\.csair\.com\/CSMBP\/data\/homePage\/getLaunchInfoNew - reject-dict
+    - ^https?:\/\/3g\.csair\.com\/CSMBP\/promotion\/personalCenterAds - reject-dict
+    - ^https?:\/\/3g\.csair\.com\/CSMBP\/personalCenter\/ads\/getEasterEggTaskOrAds - reject-dict
+    - ^https?:\/\/3g\.csair\.com\/extraClient\/data\/mytrip\/getTripAdvertisement - reject-dict
+
+
+    # ==================================================
+    # 东方航空
+    # ==================================================
+    - ^https?:\/\/app\.ceair\.com\/customize\/main\/adScreen - reject-dict
+    - ^https?:\/\/app\.ceair\.com\/itinerary\/home\/trip\/advertisement - reject-dict
+
+
+    # ==================================================
+    # 米家
+    # ==================================================
+    - ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation - reject-dict
+    - ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/resource\/realtime\/openingBanner - reject-dict
+
+
+    # ==================================================
+    # Fitdays
+    # ==================================================
+    - ^https?:\/\/open\.fitdays\.cn\/uploads\/ad\/ - reject
+
+
+    # ==================================================
+    # 华住会
+    # ==================================================
+    - ^https?:\/\/appapi\.huazhu\.com:\d+\/client\/app\/getAppStartPage\/ - reject
+    - ^https?:\/\/hweb-manager\.huazhu\.com\/start\/getAppStartPage - reject
+    - ^https?:\/\/hweb-manager\.huazhu\.com\/notice\/getAppPopupNotifyAlert - reject-dict
+    - ^https?:\/\/hweb-manager\.huazhu\.com\/hotels\/ad\/ - reject-dict
+
+    # Kelee V6：首页营销 Banner
+    - ^https:\/\/hweb-hotel\.huazhu\.com\/home\/getHomeLoinBanner$ - reject-dict
+
+
+    # ==================================================
+    # 希尔顿
+    # ==================================================
+    - ^https?:\/\/wcprd\.hilton\.com\.cn\/app-middleware\/graphql\?type=splashAd - reject-200
+
+
+    # ==================================================
+    # 亚朵
+    # ==================================================
+    - ^https?:\/\/api2\.yaduo\.com\/atourlife\/activity\/appLaunch - reject-dict
+
+
+    # ==================================================
+    # 京东
+    # Shiina Lite 已处理开屏；这里只补 Kelee 低风险项
+    # ==================================================
+    - ^https:\/\/api\.m\.jd\.com\/client\.action\?[^#]*\bfunctionId=(?:searchBoxWord|stationPullService|uniformRecommend[06])(?:&|$) - reject-dict
+
+
+    # ==================================================
+    # 拼多多
+    # Shiina Lite 已处理开屏；V6 只补低价值推荐
+    # ==================================================
+    - ^https:\/\/api\.pinduoduo\.com\/search_hotquery\? - reject-dict
+    - ^https:\/\/api\.pinduoduo\.com\/api\/growth\/nagato\/app\/index\/gather\? - reject-dict
+    - ^https:\/\/api\.pinduoduo\.com\/api\/buffon\/nasus\/recommend\? - reject-dict
+
+
+    # ==================================================
+    # 闲鱼
+    # Shiina Lite 已过滤主信息流广告
+    # Kelee V6 补推荐/搜索营销
+    # ==================================================
+    - ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/ - reject-dict
+    - ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.buy\.feeds\/ - reject-dict
+    - ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/ - reject-dict
+    - ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.playboy\.recommend\/ - reject-dict
+    - ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.near\.by\.corner\.info\/ - reject-dict
+
+
+    # ==================================================
+    # 小红书
+    # Shiina Lite 已过滤开屏/信息流广告
+    # Kelee V6 补搜索及引导营销
+    # ==================================================
+    - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/guide\/user_banner|v3\/note\/guide) - reject-dict
+    - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/banner_list$ - reject-dict
+    - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/hot_list$ - reject-dict
+    - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/hint - reject-dict
+    - ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/trending\? - reject-dict
+
+
+  script:
+    # ==================================================
+    # 航旅纵横
+    # R-Store：按广告 rpid 精确过滤
+    # ==================================================
+    - match: ^https?:\/\/(?:bkclient|umerp|home)\.umetrip\.com(?:\.cn)?\/gateway\/api\/umetrip\/native
+      name: Umetrip.AdBlock
+      type: response
+      require-body: false
+      timeout: 10
+
+    # ==================================================
+    # 铁路12306
+    # Kelee：活动横幅、热门资讯、商品信息流、商业推广
+    # 不修改购票/订单/登录
+    # ==================================================
+    - match: ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$
+      name: Kelee.12306.Clean
+      type: request
+      require-body: false
+      timeout: 10
+
+    # ==================================================
+    # 高德地图
+    # Kelee：只启用几个广告属性非常明确的接口
+    # 不启用其“精简首页/我的页面”的激进规则
+    # ==================================================
+    - match: ^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\?
+      name: Kelee.Amap.Clean
+      type: response
+      require-body: true
+      timeout: 10
+
+    - match: ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(?:mps|search\/sp|sug|tips_operation_location)
+      name: Kelee.Amap.Clean
+      type: response
+      require-body: true
+      timeout: 10
+
+    - match: ^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?
+      name: Kelee.Amap.Clean
+      type: response
+      require-body: true
+      timeout: 10
+
+
+script-providers:
+  Umetrip.AdBlock:
+    url: https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/umetrip.js
+    interval: 86400
+
+  Kelee.12306.Clean:
+    url: https://raw.githubusercontent.com/ifflagged/Romeo/main/Modules/JavaScript/Kelee/12306_remove_ads/kelee.one_12306_remove_ads.js
+    interval: 86400
+
+  Kelee.Amap.Clean:
+    url: https://raw.githubusercontent.com/ifflagged/Romeo/main/Modules/JavaScript/Kelee/Amap_remove_ads/kelee.one_Amap_remove_ads.js
+    interval: 86400
